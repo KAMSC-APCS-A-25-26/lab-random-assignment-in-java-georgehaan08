@@ -3,17 +3,21 @@ import java.util.Random;
 public class PhoneNumberGenerator {
     public static void main(String[] args) {
         // TODO: Create Random object for phone number generation
-        
+        Random num = new Random();
         // TODO: Generate first three digits (XXX)
-        // Constraint: Cannot contain 8 or 9 (digits 0-7 only)
+        int first = num.nextInt(8);
+        int second = num.nextInt(8);
+        int third = num.nextInt(8);
         
         // TODO: Generate second three digits (XXX) 
-        // Constraint: Must be <= 742 (000-742)
-        
+        int mid = num.nextInt(743);
+        String mid1 = String.format("%03d",mid);
+
         // TODO: Generate third three digits (XXX)
-        // No constraints (000-999)
-        
+        int end = num.nextInt(1000);
+        String end1 = String.format("%03d",end);
+
         // TODO: Format and display phone number as XXX-XXX-XXX
-        // Include the dashes in the output
+        System.out.printf(first + "" + second + "" + third + "-" + mid1 + "-" + end1);
     }
 }
